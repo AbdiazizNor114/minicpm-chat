@@ -1,6 +1,6 @@
-# Local AI Chat — MiniCPM5-1B
+# Local AI Helper — MiniCPM5-1B
 
-A clean, minimal chat interface for running **MiniCPM5-1B** entirely on your own machine via Ollama. No API keys. No cloud. No cost. Every token stays on your device.
+A clean, minimal chat interface for getting a little help from **MiniCPM5-1B** on your own machine through Ollama. No API keys, no cloud account, and no usage cost.
 
 ![Local AI Chat UI](https://img.shields.io/badge/runs-100%25%20locally-1D9E75?style=flat-square) ![Model](https://img.shields.io/badge/model-MiniCPM5--1B-blue?style=flat-square) ![License](https://img.shields.io/badge/license-MIT-gray?style=flat-square)
 
@@ -8,14 +8,14 @@ A clean, minimal chat interface for running **MiniCPM5-1B** entirely on your own
 
 ## Features
 
-- **100% local** — powered by [Ollama](https://ollama.com), no data ever leaves your machine
+- **Local AI help** — powered by [Ollama](https://ollama.com) on your machine
 - **Streaming responses** — text appears word by word as the model generates
 - **Markdown rendering** — bold, lists, headings all rendered properly
 - **Syntax highlighted code** — with a one-click Copy button
 - **Table rendering** — clean formatted tables from model output
 - **LaTeX math** — equations rendered via MathJax
 - **Dark mode** — automatically follows your system preference
-- **Zero dependencies** — single HTML file, open in any browser
+- **No build step** — plain HTML, CSS, and JavaScript files you can open in a browser
 
 ---
 
@@ -62,7 +62,7 @@ $env:OLLAMA_ORIGINS="*"; ollama serve
 
 ### 4. Open the UI
 
-Download `minicpm-chat.html` and open it in your browser. That's it.
+Open `index.html` in your browser. That's it.
 
 ---
 
@@ -95,8 +95,21 @@ MiniCPM5-1B punches well above its weight for a 1B model — capable of coding, 
 
 ```
 minicpm-chat/
-└── minicpm-chat.html   # Everything — UI, styles, and logic in one file
+├── index.html                  # Main app entry point to open in the browser
+├── styles.css                  # Responsive layout, theme, chat bubbles, and dark mode
+├── app.js                      # Ollama connection, streaming chat, Markdown, copy buttons
+├── minicpm-chat.html           # Legacy single-file version kept for reference
+├── minicpm-chat.original.html  # Original backup before splitting the app into files
+└── README.md                   # Setup notes, feature overview, and project documentation
 ```
+
+The current app uses the split-file version:
+
+- `index.html` loads the page shell, CDN libraries, stylesheet, and JavaScript.
+- `styles.css` owns the visual polish so the markup stays clean.
+- `app.js` handles user input, sends chat requests to Ollama, streams responses, and renders Markdown/code/math output.
+
+`minicpm-chat.html` and `minicpm-chat.original.html` are kept as history/reference files. For normal use, open `index.html`.
 
 ---
 
