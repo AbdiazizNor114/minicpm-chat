@@ -115,8 +115,7 @@ The current app uses the split-file version:
 
 ## About
 
-Built by **Abdiaziiz** — AI Engineering student at Dalarna University, Sweden.  
-Part of an ongoing series of local AI and ML portfolio projects.
+Built by **Abdiaziiz** — AI Engineering student at Dalarna University, Sweden.
 
 - Portfolio: [aziz.smidify.se](https://aziz.smidify.se)
 - GitHub: [@AbdiazizNor114](https://github.com/AbdiazizNor114)
